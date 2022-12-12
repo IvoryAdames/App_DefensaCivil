@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetapiService } from '../serviciosapi/getapi.service';
 
 @Component({
   selector: 'app-servicios',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiciosPage implements OnInit {
 
-  constructor() { }
+  public servicios: any [] = []
+
+  constructor( private getapiService: GetapiService ) { }
 
   ngOnInit() {
+    this.getservicios()
+  }
+
+  getservicios() {
+    this.getapiService.getservicios().subscribe((data: any) => this.servicios = data.results)
   }
 
 }
