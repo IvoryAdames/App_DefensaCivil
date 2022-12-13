@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
+import { GetapiService } from '../serviciosapi/getapi.service';
 
 @Component({
   selector: 'app-servicios',
   templateUrl: './servicios.page.html',
   styleUrls: ['./servicios.page.scss'],
 })
-export class ServiciosPage implements OnInit {
+export class ServiciosPage {
 
-  constructor() { }
+  @ViewChild(IonContent) content!: IonContent;
 
-  ngOnInit() {
+  getdata: any []=[];
+
+  constructor( public _services: GetapiService ) { 
+    this._services.getdata<any>("").subscribe(data => {
+      this.getdata = data.datos
+      console.log(this.getdata);
+    })
+  }
+
+  scrollToTop() {
+    this.content.scrollToTop(500);
   }
 
 }
