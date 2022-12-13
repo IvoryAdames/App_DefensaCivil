@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'iniciarsesion',
     loadChildren: () => import('./iniciarsesion/iniciarsesion.module').then( m => m.IniciarsesionPageModule)
+  },
+  {
+    path: 'recuperarclave',
+    loadChildren: () => import('./recuperarclave/recuperarclave.module').then( m => m.RecuperarclavePageModule)
   }
 ];
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from './services/login.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -21,7 +21,7 @@ export class AppComponent {
     { title: 'Iniciar sesión', url: '/iniciarsesion', icon: 'log-in' },
   ];
 
-  constructor(private loginService: LoginService) {
-    this.loginService.postData('00000000000', '1234');
+  constructor() {
+    // this.loginService.postData('00000000000', '1234');
   }
 }
