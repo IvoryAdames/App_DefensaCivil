@@ -15,10 +15,6 @@ export class HistoriaPage implements OnInit {
   ngOnInit() {
   }
 
-  scrollToBottom() {
-    this.content.scrollToBottom(500);
-  }
-
   scrollToTop() {
     this.content.scrollToTop(500);
   }

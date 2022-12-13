@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 import { GetapiService } from '../serviciosapi/getapi.service';
 
 @Component({
@@ -6,18 +7,21 @@ import { GetapiService } from '../serviciosapi/getapi.service';
   templateUrl: './servicios.page.html',
   styleUrls: ['./servicios.page.scss'],
 })
-export class ServiciosPage implements OnInit {
+export class ServiciosPage {
 
-  public servicios: any [] = []
+  @ViewChild(IonContent) content!: IonContent;
 
-  constructor( private getapiService: GetapiService ) { }
+  getdata: any []=[];
 
-  ngOnInit() {
-    this.getservicios()
+  constructor( public _services: GetapiService ) { 
+    this._services.getdata<any>("").subscribe(data => {
+      this.getdata = data.datos
+      console.log(this.getdata);
+    })
   }
 
-  getservicios() {
-    this.getapiService.getservicios().subscribe((data: any) => this.servicios = data.results)
+  scrollToTop() {
+    this.content.scrollToTop(500);
   }
 
 }

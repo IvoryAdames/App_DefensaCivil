@@ -8,11 +8,11 @@ import { GetapiService } from '../videosapi/getapi.service';
 })
 export class VideosPage {
 
-  getdata:any[]=[];
+  getdata: any []=[];
 
-  constructor( public _services: GetapiService) { 
-    this._services.getdata<any[]>("").subscribe(data => {
-      this.getdata = data
+  constructor( public _services: GetapiService ) { 
+    this._services.getdata<any>("").subscribe(data => {
+      this.getdata = data.datos
       console.log(this.getdata);
     })
   }

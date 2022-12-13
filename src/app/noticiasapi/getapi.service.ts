@@ -9,7 +9,7 @@ export class GetapiService {
   constructor( public _http: HttpClient ) { }
 
   getdata<T>( url: string ) {
-    url = 'https://adamix.net/defensa_civil/def/servicios.php'
+    url = 'https://adamix.net/defensa_civil/def/noticias.php'
     return this._http.get<T>(url);
   } 
 

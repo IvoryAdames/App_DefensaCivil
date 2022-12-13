@@ -6,13 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class GetapiService {
 
-  constructor( public _http: HttpClient) { 
+  constructor( public _http: HttpClient) { }
 
-  }
-
-  getdata<T>(url: string) {
+  getdata<T>( url: string ) {
     url = 'https://adamix.net/defensa_civil/def/videos.php'
-    return  this._http.get<T[]>(url);
+    return this._http.get<T>(url);
   } 
 
 }
