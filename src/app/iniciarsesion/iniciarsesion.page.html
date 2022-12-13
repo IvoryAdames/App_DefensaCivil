@@ -8,5 +8,36 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="container-fluid">
+    <div class="row mt-4">
+      <div class="col-8 offset-2">
+        <form>
+          <div class="mb-3">
+            <label for="correo" class="form-label"
+              >Correo</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="correo"
+              formControlName="correo"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="clave"
+            />
+          </div>
+          <div class="float-end">
+            <a href="" class="btn btn-secondary m-1">Recuperar contraseña</a>
+            <button class="btn btn-primary m-1">Iniciar Sesión</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </ion-content>
